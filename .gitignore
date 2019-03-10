@@ -1,0 +1,17 @@
+/node_modules
+/public/hot
+/public/storage
+/Modules/Mall/public/*
+/Modules/Mall/public/img/*
+/Modules/Mall/Resources/views/index.blade.php
+/storage/*.key
+/vendor
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.env
+.env.*
+node_modules*
