@@ -21,8 +21,10 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
+                            // 占位符
+                            name: '[name]_[hash].[ext]',
                             // 小于189kb 将转化为base64格式
-                            limit: 189 * 1024,
+                            limit: 11 * 1024,
                             // 指定资源的输出路径
                             outputPath: '/assets',
                             // 把指定的路径加到要访问的静态资源路径前面
@@ -39,6 +41,17 @@ module.exports = {
                     //     }
                     // }
                 ],
+            },
+            {
+                test: /\.(css)$/ig,
+                // 打包css文件
+                use: [ 'style-loader', 'css-loader' ]
+            },
+            {
+                // loader的执行顺序是从下到上，从右到左的执行顺序
+                test: /\.(scss)$/ig,
+                // 打包sass文件
+                use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader' ]
             }
         ]
     }
