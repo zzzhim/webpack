@@ -30,16 +30,7 @@ module.exports = {
                             // 把指定的路径加到要访问的静态资源路径前面
                             publicPath: 'assets'
                         }
-                    },
-                    // {
-                    //     loader: 'file-loader',
-                    //     options: {
-                    //         // 指定资源的输出路径
-                    //         outputPath: '/assets',
-                    //         // 把指定的路径加到要访问的静态资源路径前面
-                    //         publicPath: 'assets'
-                    //     }
-                    // }
+                    }
                 ],
             },
             {
@@ -56,7 +47,9 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            importLoaders: 2
+                            importLoaders: 2,
+                            // 开启css模块化打包
+                            modules: true
                         }
                     },
                     'sass-loader',
