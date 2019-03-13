@@ -9,12 +9,16 @@ module.exports = {
     // 打包后是否压缩
     mode: "development", // "production" | "development" | "none"
     // 应用程序执行的文件
-    entry: "./src/index.js",
+    entry: {
+        // 打包多个文件
+        main: "./src/index.js",
+        sub: "./src/index.js"
+    },
     output: {
         // 输出的文件名
-        filename: "dist.js",
+        filename: "[name].js", // 占位符输出多个文件
         // 输出文件的目录
-        path: path.resolve(__dirname, 'bundle')
+        path: path.resolve(__dirname, 'dist')
     },
     // 关于模块配置
     module: {
