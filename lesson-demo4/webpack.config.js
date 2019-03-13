@@ -15,6 +15,8 @@ module.exports = {
         sub: "./src/index.js"
     },
     output: {
+        // 打包cdn
+        publicPath: 'http://cdn.com.cn',
         // 输出的文件名
         filename: "[name].js", // 占位符输出多个文件
         // 输出文件的目录
