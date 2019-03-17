@@ -5,26 +5,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
-const webpack = require('webpack')
-
 module.exports = {
-    // 打包后是否压缩
-    mode: "development", // "production" | "development" | "none"
-    // 智能错误提示
-    devtool: 'cheap-module-eval-source-map',
     // 应用程序执行的文件
     entry: {
         // 打包多个文件
         main: "./src/index.js",
         // sub: "./src/index.js"
-    },
-    output: {
-        // 所有打包文件的之间的引用都加一个根路径
-        // publicPath: '/',
-        // 输出的文件名
-        filename: "[name].js", // 占位符输出多个文件
-        // 输出文件的目录
-        path: path.resolve(__dirname, 'dist')
     },
     // 关于模块配置
     module: {
@@ -63,22 +49,14 @@ module.exports = {
         // 清空整个dist目录
         new CleanWebpackPlugin({
             options: 'dist'
-        }),
-        // 热模块替换
-        new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        })
     ],
-    optimization: {
-        usedExports: true
+    output: {
+        // 所有打包文件的之间的引用都加一个根路径
+        // publicPath: '/',
+        // 输出的文件名
+        filename: "[name].js", // 占位符输出多个文件
+        // 输出文件的目录
+        path: path.resolve(__dirname, 'dist')
     },
-    // 启动一个服务器
-    devServer: {
-        contentBase: './dist',
-        // 在启动devServer的时候，自动帮助我们启动浏览器
-        open: true,
-        // 启动热模块替换
-        hot: true,
-        // 即使HMR不生效也不自动刷新页面
-        hotOnly: true
-    }
 }
