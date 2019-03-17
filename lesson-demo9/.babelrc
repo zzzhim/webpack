@@ -1,0 +1,27 @@
+{
+    // 会污染全局环境
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "chrome": "67",
+                },
+                "useBuiltIns": "usage"
+            }
+        ]
+    ]
+    // // 不会污染全局环境
+    // "plugins": [
+    //     [
+    //         "@babel/plugin-transform-runtime",
+    //         {
+    //             "absoluteRuntime": false,
+    //             "corejs": 2,
+    //             "helpers": true,
+    //             "regenerator": true,
+    //             "useESModules": false
+    //         }
+    //     ]
+    // ]
+}
